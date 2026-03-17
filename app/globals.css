@@ -1,0 +1,335 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   GLOBAL COLOR SYSTEM   Light & Dark Theme
+   Enterprise-grade, WCAG-aware. Authority Blue + Calm Teal (limited).
+
+   Usage:
+   • Primary CTA: bg-accent, hover:bg-accent-hover, active:bg-accent-active, text-text-inverse
+   • Text on blue (accent): always white (--text-inverse: #ffffff) in light and dark.
+   • Secondary CTA (outline): border-accent text-accent, hover:bg-accent-muted
+   • Links: text-accent, hover:text-accent-hover
+   • Secondary accent (teal, limited): accent-secondary
+   --------------------------------------------------------------------------- */
+
+:root {
+   --font-primary: var(--font-work-sans);
+  --font-secondary: var(--font-work-sans);
+  color-scheme: light;
+  /* Backgrounds & surfaces */
+      --bg-page: #020617;
+    --bg-surface: #020617;
+    --bg-card: #020617;
+    --bg-subtle: #020617;
+    --border-default: #1e293b;
+    --border-subtle: #1e293b;
+    --border-strong: #334155;
+    --text-primary: #f8fafc;
+    --text-body: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-disabled: #64748b;
+    --text-inverse: #ffffff;
+    --accent-primary: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-active: #1e40af;
+    --accent-muted: rgba(37, 99, 235, 0.15);
+    --accent-secondary: #14b8a6;
+    --focus-ring: #2563eb;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg-page: #020617;
+    --bg-surface: #020617;
+    --bg-card: #020617;
+    --bg-subtle: #020617;
+    --border-default: #1e293b;
+    --border-subtle: #1e293b;
+    --border-strong: #334155;
+    --text-primary: #f8fafc;
+    --text-body: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-disabled: #64748b;
+    --text-inverse: #ffffff;
+    --accent-primary: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-active: #1e40af;
+    --accent-muted: rgba(37, 99, 235, 0.15);
+    --accent-secondary: #14b8a6;
+    --focus-ring: #2563eb;
+  }
+}
+
+.work-sans{
+  font-family:var(--font-work-sans) ;
+}
+
+
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-page: #020617;
+  --bg-surface: #020617;
+  --bg-card: #020617;
+  --bg-subtle: #020617;
+  --border-default: #1e293b;
+  --border-subtle: #1e293b;
+  --border-strong: #334155;
+  --text-primary: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-disabled: #64748b;
+  --text-inverse: #ffffff;
+  --accent-primary: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-active: #1e40af;
+  --accent-muted: rgba(37, 99, 235, 0.15);
+  --accent-secondary: #14b8a6;
+  --focus-ring: #2563eb;
+}
+
+/* ---------------------------------------------------------------------------
+   Spacing scale (4px base)   layout rhythm
+   --------------------------------------------------------------------------- */
+
+@theme inline {
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-16: 4rem;     /* 64px */
+  --spacing-20: 5rem;     /* 80px */
+  --spacing-24: 6rem;     /* 96px */
+  --spacing-page-x: clamp(1rem, 5vw, 2rem);
+  --spacing-page-y: 1.5rem;
+  --spacing-section: clamp(3rem, 8vw, 5rem);
+}
+
+/* ---------------------------------------------------------------------------
+   Typography   headline, subheading, body, UI
+   --------------------------------------------------------------------------- */
+
+@theme inline {
+  --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-work-sans), ui-monospace, monospace;
+  --font-headline: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --font-size-headline-xl: clamp(2rem, 4vw, 3rem);
+  --font-size-headline-lg: clamp(1.5rem, 3vw, 2rem);
+  --font-size-headline: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-subheading: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-body-sm: 0.9375rem;
+  --font-size-ui: 0.875rem;
+  --font-size-caption: 0.8125rem;
+
+  --line-height-headline: 1.2;
+  --line-height-subheading: 1.35;
+  --line-height-body: 1.6;
+  --line-height-ui: 1.4;
+  --line-height-tight: 1.25;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+}
+
+/* ---------------------------------------------------------------------------
+   Semantic color utilities (Tailwind)
+   --------------------------------------------------------------------------- */
+
+@theme inline {
+  --color-bg-page: var(--bg-page);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-card: var(--bg-card);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-body: var(--text-body);
+  --color-text-secondary: var(--text-body);
+  --color-text-muted: var(--text-muted);
+  --color-text-tertiary: var(--text-muted);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-inverse: var(--text-inverse);
+  --color-border-default: var(--border-default);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-focus-ring: var(--focus-ring);
+}
+
+/* ---------------------------------------------------------------------------
+   Base styles
+   --------------------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+ font-family: var(--font-secondary), sans-serif;
+   font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, .logo, .hero-title {
+  font-family: var(--font-primary), sans-serif; /* Headers & special */
+}
+/* Focus visible for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Header   nav link underline hover (use .nav-link-underline)
+   --------------------------------------------------------------------------- */
+
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--accent-primary);
+  transition: width 0.25s ease-out;
+}
+
+.nav-link-underline:hover::after,
+.nav-link-underline.is-active::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link-underline::after {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Theme-based logo switching (instant, no JavaScript lag)
+   --------------------------------------------------------------------------- */
+
+/* Default (dark mode): show dark logo, hide light logo */
+.dark-logo {
+  display: block !important;
+}
+
+.light-logo {
+  display: none !important;
+}
+
+/* Light mode: hide dark logo, show light logo */
+[data-theme="light"] .dark-logo {
+  display: none !important;
+}
+
+[data-theme="light"] .light-logo {
+  display: block !important;
+}
+
+/* Also handle system preference when no explicit theme is set */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .dark-logo {
+    display: none !important;
+  }
+
+  :root:not([data-theme="dark"]) .light-logo {
+    display: block !important;
+  }
+}
+
+.chat-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.15);
+  /* border-radius: 9px; */
+}
+/* Toggle Switch for Settings */
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle:checked {
+  background-color: #2563eb;
+}
+
+.toggle:before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle:checked:before {
+  left: 22px;
+}
+
+/* Custom Scrollbar for Notifications */
+.notifications-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #2563eb #1e293b;
+}
+
+.notifications-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notifications-scroll::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+.notifications-scroll::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 10px;
+}
+
+.notifications-scroll::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+    
