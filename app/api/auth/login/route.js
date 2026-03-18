@@ -1,5 +1,7 @@
 
 // app/api/auth/login/route.js
+export const runtime = 'nodejs';
+
 import { NextResponse } from 'next/server';
 import prisma from '../../../../lib/prisma';
 import { comparePassword } from '../../../../lib/auth/password';
