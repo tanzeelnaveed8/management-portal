@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 
 // app/api/ceo/stats/route.js

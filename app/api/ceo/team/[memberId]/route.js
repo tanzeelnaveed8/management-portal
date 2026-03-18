@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 // app/api/ceo/team/[memberId]/route.js
 import { NextResponse } from 'next/server';
 import { verifyAccessToken } from '../../../../../lib/auth/jwt'; // Keep relative path

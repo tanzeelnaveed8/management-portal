@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 // app/api/developer/projects/[projectId]/route.js
 import { NextResponse } from 'next/server';

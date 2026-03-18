@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 
 // app/api/ceo/team/[memberId]/reset-password/route.js

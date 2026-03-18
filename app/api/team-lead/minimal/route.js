@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 // app/api/team-lead/developers/minimal/route.js
 import { NextResponse } from 'next/server';

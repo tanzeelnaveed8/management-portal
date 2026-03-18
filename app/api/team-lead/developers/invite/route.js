@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 
 // app/api/team-lead/developers/invite/route.js

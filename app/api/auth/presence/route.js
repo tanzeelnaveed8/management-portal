@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 // app/api/auth/presence/route.js
 import { NextResponse } from 'next/server';

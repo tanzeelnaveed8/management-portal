@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 // app/api/developer/tasks/[taskId]/submit-review/route.js
 import { NextResponse } from 'next/server';

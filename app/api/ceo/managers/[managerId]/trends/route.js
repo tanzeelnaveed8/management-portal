@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 // app/api/ceo/managers/[managerId]/trends/route.js
 import { NextResponse } from 'next/server';

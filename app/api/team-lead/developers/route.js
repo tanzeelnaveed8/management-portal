@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 // app/api/team-lead/developers/route.js
 import { NextResponse } from 'next/server';
 import { verifyAccessToken } from '../../../../lib/auth/jwt';

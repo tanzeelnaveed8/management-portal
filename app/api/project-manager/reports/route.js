@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 // app/api/project-manager/reports/route.js (FIXED VERSION)
 import { NextResponse } from 'next/server';
 import { verifyAccessToken } from '../../../../lib/auth/jwt';

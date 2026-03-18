@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 
 
 // app/api/project-manager/projects/[projectId]/feedback/route.js

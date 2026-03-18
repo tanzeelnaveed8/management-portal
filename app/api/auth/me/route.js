@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 //Get Current User API
 import { NextResponse } from 'next/server';
 import { verifyAccessToken } from '../../../../lib/auth/jwt';
